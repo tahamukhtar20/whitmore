@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Whitmore Family Holdings
 
-## Getting Started
+Website for a fictional family holding company that buys small and mid-sized businesses and keeps them. It is an anonymised rebuild of a client project by tahamukhtar20; the company, its holdings and its people are invented.
 
-First, run the development server:
+Live: https://whitmore.tahamukhtar.com
+
+## What is on it
+
+- Page changes with three panels sweeping across the screen. Navigation is queued, so fast clicks and the Back button never overlap.
+- A background of drifting dots that link up with lines and react to the mouse, with soft orbs and turning rings behind.
+- The portfolio as a constellation: companies orbit the Whitmore mark on two rings, sized by revenue and coloured by sector. Hover, focus or tap one to see its details.
+- "Is your company a fit?": sliders for sector, revenue, margin, growth and recurring revenue give an indicative valuation from three methods (sector EBITDA multiples, revenue multiples and a five-year discounted cash flow) and a verdict against the firm's buying rules.
+- Portfolio filter, family page with a quote carousel (pausable), and a demo contact form that sends nothing.
+- Respects reduced motion: the dots are drawn once and pages switch without the sweep.
+
+## Stack
+
+Vite, React 18 and TypeScript, with lucide-react icons. The valuation logic is plain TypeScript in `src/lib/valuation.ts`, tested with Node's built-in test runner. Served as static assets from a Cloudflare Worker.
+
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
+npm install
+npm run dev      # http://localhost:4490
+npm test
+npm run build
+npx wrangler deploy
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## License
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+MIT
